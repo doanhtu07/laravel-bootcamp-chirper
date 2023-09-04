@@ -2,8 +2,8 @@
     "private": true,
     "type": "module",
     "scripts": {
-        "dev": "npm run update-vendor && npm run sail up",
-        "dev:old": "vite",
+        "dev": "npm run update-vendor && npm run sail down && npm run sail -- up -d && npm run sail -- npm run dev:vite",
+        "dev:vite": "vite",
         "build": "tsc && vite build && vite build --ssr",
         "update-vendor": "composer update",
         "sail": "./vendor/bin/sail",
